@@ -1,17 +1,36 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
   </div>
 </template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+  },
+  data(){
+    return{
+      info:{
+        type:"演出",
+        id:123,
+        name:"演出",
+        photo_src:"",//图片超链接，base64的话请更改el-image的:src为其他值
+        time:"2020-01-01",
+        place:"地点",
+        price:120,
+        rate:null,
+        item_num:1
+      },
+      notice_info:{
+        "id": 6,
+        "time": "2021/05/01",
+        "title": "欢迎您成为小麦网的尊贵客户",
+        "type": "系统通知",
+        "content": "欢迎您成为小麦网的尊贵客户"
+      }
+    }
   }
 }
 </script>
@@ -23,6 +42,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin: 0;
+  min-width: 100%;
 }
 </style>
